@@ -279,14 +279,12 @@ void MatrizTraslacion(Vector2& vec1, Vector2& vec2)
 
 	Trasladar trasladar(vx, vy);
 
-	//trasladando el vector 1
-	printf("\nTrasladar vector 1\n");
+	printf("\nTraslate vector 1\n");
 	Vector2 vec3 = trasladar * vec1;
 	vec3.Print();
 	draw1.DrawPxl(vec3.x, vec3.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 
-	//trasladando el vector 2
-	printf("\nTrasladar vector2\n");
+	printf("\nTraslate vector 2\n");
 	Vector2 vec4 = trasladar * vec2;
 	vec4.Print();
 	draw1.DrawPxl(vec4.x, vec4.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
@@ -303,14 +301,12 @@ void MatrizEscalacion(Vector2 & vec1, Vector2 & vec2)
 	Escalar escalar(sx, sy);
 	escalar.Print();
 
-	//Escalando vector 1
-	printf("\nEscalando vector 1\n");
+	printf("\Scale vector 1\n");
 	Vector2 vec3 = escalar * vec1;
 	vec3.Print();
 	draw1.DrawPxl(vec3.x, vec3.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 
-	//Escalando vector 2
-	printf("\nTrasladar vector2\n");
+	printf("\nScale vector 2\n");
 	Vector2 vec4 = escalar * vec2;
 	vec4.Print();
 	draw1.DrawPxl(vec4.x, vec4.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
@@ -325,14 +321,12 @@ void MatrizRotacion(Vector2 &vec1, Vector2 &vec2)
 	Rotar rotar(angle);
 	rotar.Print();
 
-	//Escalando vector 1
-	printf("\nAngulo en vector 1\n");
+	printf("\nAngle in vector 1\n");
 	Vector2 vec3 = rotar * vec1;
 	vec3.Print();
 	draw1.DrawPxl(vec3.x, vec3.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 
-	//Escalando vector 2
-	printf("\nAngulo en vector2\n");
+	printf("\nAngle in vector2\n");
 	Vector2 vec4 = rotar * vec2;
 	vec4.Print();
 	draw1.DrawPxl(vec4.x, vec4.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
@@ -341,7 +335,6 @@ void MatrizRotacion(Vector2 &vec1, Vector2 &vec2)
 void matrixOp(Matrix & matrx) {
 	Matrix matrix1(2, 2), matrix2(2, 2), matrix3(2, 2);
 	float x1, x2, y1, y2;
-	//cout << "not to make "
 	printf("To make operations with another matrix i need you to give me that other matrix:\n");
 	cin >> x1;
 	cin >> y1;
@@ -427,7 +420,6 @@ void VectorsOp(Vector2 & vec1, Vector2 & vec2)
 	cout << "7.- Scale with a vector" << endl;
 	cout << "8.- Rotate" << endl;
 	int respuesta; cin >> respuesta;
-	//Booleanos para controlar lo que el usuario realizara
 	printf("\n");
 
 	switch (respuesta) {
@@ -457,15 +449,12 @@ void VectorsOp(Vector2 & vec1, Vector2 & vec2)
 		cin >> numero;
 		printf("Number:%f ", numero);
 
-		//multiplicar el vector por el numero
 		vec1 = vec1 * numero;
 		vec2 = vec2 * numero;
 
-		//impresion de vectores
 		vec1.Print();
 		vec2.Print();
 
-		//dibujar pixeles
 		draw1.DrawPxl(vec1.x, vec1.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 		draw1.DrawPxl(vec2.x, vec2.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 		break;
@@ -475,15 +464,12 @@ void VectorsOp(Vector2 & vec1, Vector2 & vec2)
 		cin >> numero;
 		printf("Number:%f ", numero);
 
-		//multiplicar el vector por el numero
 		vec1 = vec1 / numero;
 		vec2 = vec2 / numero;
 
-		//impresion de vectores
 		vec1.Print();
 		vec2.Print();
 
-		//dibujar pixeles
 		draw1.DrawPxl(vec1.x, vec1.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 		draw1.DrawPxl(vec2.x, vec2.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 		break;
