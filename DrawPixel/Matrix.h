@@ -1,32 +1,42 @@
 #pragma once
-
-//#ifndef MATRIX_H
-//#define MATRIX_H
-
 #include <vector>
 #include "Vector2.h"
+#include <math.h>
+#include <cmath>
+#include <iostream>
+#ifndef  Matrix_H
+#define Matrix_H
+
 class Matrix
 {
-private:
+protected:
 	std::vector<std::vector<float>> mat;
+private:
 	unsigned rows;
 	unsigned cols;
 public:
+	Matrix();
 	Matrix(unsigned rows, unsigned cols);
 	Matrix(const Matrix& other);
+	virtual ~Matrix();
+	//Matrix(unsigned, unsigned, int);
 	//virtual ~Matrix();
+
+	//void ModMatrix(int value, int rows, int cols);
 
 	Matrix& operator=(Matrix);
 	Matrix operator+(Matrix&);
 	Matrix operator-(Matrix&);
-	//Matrix operator*(Matrix&);
+	Matrix operator*(Matrix&);
 	Matrix transpose();
+	Matrix identity();
 
 	////Multiplicacion por escalar
-	//Matrix operator+(float&);
-	//Matrix operator-(float&);
-	//Matrix operator*(float&);
-	//Matrix operator/(float&);
+	Matrix operator+(float&);
+	Matrix operator-(float&);
+	Matrix operator*(float&);
+	Matrix operator/(float&);
+	Vector2 operator*(const Vector2&);
 
 	////Multiplicacion por vector
 	//Vector2 operator*(const Vector2&);
@@ -34,6 +44,9 @@ public:
 
 	unsigned getRows() const;
 	unsigned getCols() const;
+	void ModifyMatrix(); 
+	void VectorInMatrix(Vector2&, Vector2&);
+	void Print();
 };
-//#endif
+#endif
 
