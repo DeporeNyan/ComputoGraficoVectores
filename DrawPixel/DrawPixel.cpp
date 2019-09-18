@@ -474,12 +474,10 @@ void VectorsOp(Vector2 & vec1, Vector2 & vec2)
 		draw1.DrawPxl(vec2.x, vec2.y, SCREEN_WIDTH, SCREEN_HEIGHT, gRenderer, 50);
 		break;
 	case 6:
-		printf("Para esto, es necesario utilizar una matriz de traslacion: \n 1 0 vx \n 0 1 vy \n 0 0 1\nNecesito que me ingreses los valores de vx y vy.\nVx: ");
 		printf("For this i will need to use the traslation matrix: \n 1 0 vx \n 0 1 vy \n 0 0 1\nI need you to type the values of vx and vy.\nVx:");
 		MatrizTraslacion(vec1, vec2);
 		break;
 	case 7:
-		printf("Para esto, es necesario utilizar una matriz de escala: \n 1 0 sx \n 0 1 sy \n 0 0 1\nNecesito que me ingreses los valores de sx y sy.\nSx: ");
 		printf("For this i will need to use the scaling matrix: \n 1 0 sx \n 0 1 sy \n 0 0 1\nI need you to type the values of sx and sy.\nSx:");
 
 		MatrizEscalacion(vec1, vec2);
@@ -508,9 +506,6 @@ void Programa() {
 	cout << "5.- Draw a line using Bezier algorith." << endl;
 	cout << "6.- Make a line using DDA algorithm." << endl;
 	cout << "7.- Make a line using a personal algorithm." << endl;
-	//cout << "8.- Pregunta numero 2 del examen" << endl;
-	//cout << "9.- Pregunta 4.3 del examen" << endl;
-	//cout << "10.- Pregunta 5 del examen" << endl;
 	cin >> x;
 
 	vector<Vector2> v; //this is a vector of integer vectors
@@ -648,18 +643,6 @@ void Programa() {
 				cin >> y2;
 				drawLine(x1, y1, x2, y2);
 			}
-			//else if (x == 8) {
-			//	Bezier6();
-			//}
-			//else if (x == 9) {
-			//	Bresenham(0, sqrt(2) * 100, 0, (2 * sqrt(2)) * 100);
-			//	Bresenham(0, (2 * sqrt(2) * 100), 0, (-2 * sqrt(2)) * 100);
-			//	Bresenham(0, sqrt(2) * 100, 0, (-2 * sqrt(2)) * 100);
-			//}
-			//else if (x == 10) {
-			//	Vector2 Vect1(0, 0);
-			//	DrawCircle(200, Vect1, 3, 50, 50, 50);
-			//}
 			else {
 				cout << "You didnt write a valid answer, try again.";
 			}
